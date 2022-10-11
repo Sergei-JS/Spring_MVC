@@ -4,14 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping(value = "/employee")
 public class controller {
-    @RequestMapping(value = "/employee")
-    public class MyController {
 
-        @RequestMapping("/")
-        public String scowFirst() {
-            return "first-view";
-        }
-    }
-}
+    @RequestMapping( "/")
+    public String scowFirst() {
+        return "first-view";
+    }}
 
