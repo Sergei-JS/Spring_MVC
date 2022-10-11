@@ -1,7 +1,22 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+  <display-name>spring-cource-mvc</display-name>
+  <absolute-ordering />
+  <servlet>
+    <servlet-name>dispatcher</servlet-name> <!-- присваивание имя сервлету,по которому будет идти обращение к Front Controller-->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> <!--класс, который отвечает за DispatcherServlet-->
+    <init-param>
+      <param-name>contextConfigLocation</param-name> <!--указывает,где находится файл applicationContext, который отвечает за конфигурацию Spring приложения-->
+      <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name> <!-- прописывается url адрес для DispatcherServlet-->
+    <url-pattern>/</url-pattern>  <!-- '/' означает, что запрос (HTTP request) в любом случае придет на DispatcherServlet-->
+  </servlet-mapping>
 </web-app>
+
