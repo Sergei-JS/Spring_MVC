@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class controller {
 
     @RequestMapping( "/")
-    public String scowFirst() {
+    public String showFirstView() {
         return "first-view";
     }}
 
