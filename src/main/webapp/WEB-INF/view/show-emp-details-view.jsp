@@ -8,8 +8,13 @@
 <br><%--переход на новую строку--%>
 <br>
 
-Your name: ${param.employeeName}
-
+Your name:${employee.name}
+<br>
+Your surname:${employee.surename}
+<br>
+Your salary:${employee.salary}
+<br>
+Your department: ${employee.department}
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 package spring_mvc;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
+import spring_mvc.validation.CheckEmail;
 
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Employee {
@@ -12,15 +12,47 @@ public class Employee {
     private String name;
     @NotBlank(message = "required field")
     private String surname;
-    private String department;
-    @Min(value = 500)
-    private int salary;
-    private String carBrand;
-    private String[] languages;
 
+    @Min(value = 500, message="must be greater than 499")
+    @Max(value = 1000,message="must be  less than 1001")
+    private int salary;
+    private String department;
+    private Map<String,String>departments;
+    private String carBrand;
+    private Map<String,String>carBrands;
+    private String languages;
+    private Map<String,String>languageList;;
+
+    @CheckEmail(value = "abc.com", message = "email must ends with abc.com")
+    private String email;
 
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "XXX-XX-XX")
     private String phoneNumber;
+
+    public  Employee(){
+        departments=new HashMap<>();
+        departments.put("IT","Information Technology");
+        departments.put("HR","Human Resourses");
+        departments.put("Sales","Sales");
+
+        carBrands= new HashMap<>();
+        carBrands.put("BMW","BMW");
+        carBrands.put("Audi","Audi");
+        carBrands.put("Mercedes-Benz","MB");
+
+        languageList=new HashMap<>();
+        languageList.put("Englich","EN");
+        languageList.put("Deutch","DE");
+        languageList.put("French","FR");
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -29,17 +61,14 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-
-    public String[] getLangs() {
+    public String getLanguages() {
         return languages;
     }
 
-    public void setLangs(String[] langs) {
-        this.languages = langs;
+    public void setLanguages(String languages) {
+        this.languages = languages;
     }
 
-    public Employee() {
-    }
 
     public String getName() {
         return name;
@@ -57,12 +86,12 @@ public class Employee {
         this.surname = surname;
     }
 
-    public String getDepart() {
+    public String getDepartment() {
         return department;
     }
 
-    public void setDepart(String depart) {
-        this.department = depart;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public int getSalary() {
@@ -83,6 +112,30 @@ public class Employee {
                 '}';
     }
 
+    public Map<String, String> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Map<String, String> departments) {
+        this.departments = departments;
+    }
+
+    public Map<String, String> getCarBrands() {
+        return carBrands;
+    }
+
+    public void setCarBrands(Map<String, String> carBrands) {
+        this.carBrands = carBrands;
+    }
+
+    public Map<String, String> getLanguageList() {
+        return languageList;
+    }
+
+    public void setLanguageList(Map<String, String> languageList) {
+        this.languageList = languageList;
+    }
+
     public String getCarBrand() {
         return carBrand;
     }
@@ -91,5 +144,6 @@ public class Employee {
         this.carBrand = carBrand;
     }
 }
+
 
 
