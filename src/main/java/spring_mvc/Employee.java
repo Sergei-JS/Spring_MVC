@@ -41,7 +41,7 @@ public class Employee {
         carBrands.put("Mercedes-Benz","MB");
 
         languageList=new HashMap<>();
-        languageList.put("Englich","EN");
+        languageList.put("English","EN");
         languageList.put("Deutch","DE");
         languageList.put("French","FR");
     }
@@ -143,6 +143,7 @@ public class Employee {
     public void setCarBrand(String carBrand) {
         this.carBrand = carBrand;
     }
+
 }
 
 
