@@ -1,6 +1,8 @@
 package spring_mvc;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
+
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

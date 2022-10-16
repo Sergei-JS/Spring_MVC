@@ -1,20 +1,22 @@
 package spring_mvc;
 
-import jakarta.validation.constraints.*;
+
+
 import spring_mvc.validation.CheckEmail;
 
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class Employee {
-    @Size(min = 2, message = " need min 2 symbol")
+    @Size(min=2, message=" need min 2 symbol")
     private String name;
-    @NotBlank(message = "required field")
+    @NotBlank(message="surname is required field")
     private String surname;
 
-    @Min(value = 500, message="must be greater than 499")
-    @Max(value = 1000,message="must be  less than 1001")
+    @Min(value=500, message="must be greater than 499")
+    @Max(value=1000,message="must be  less than 1001")
     private int salary;
     private String department;
     private Map<String,String>departments;
@@ -23,11 +25,11 @@ public class Employee {
     private String languages;
     private Map<String,String>languageList;;
 
-    @CheckEmail(value = "abc.com", message = "email must ends with abc.com")
-    private String email;
-
-    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "XXX-XX-XX")
-    private String phoneNumber;
+//    @CheckEmail(value = "abc.com", message = "email must ends with abc.com")
+//    private String email;
+//
+//    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "XXX-XX-XX")
+//    private String phoneNumber;
 
     public  Employee(){
         departments=new HashMap<>();
@@ -45,21 +47,21 @@ public class Employee {
         languageList.put("Deutch","DE");
         languageList.put("French","FR");
     }
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+//
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
 
     public String getLanguages() {
         return languages;
